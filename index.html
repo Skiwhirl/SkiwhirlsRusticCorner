@@ -17,10 +17,23 @@
 			background-attachment: fixed;
 		}
 		.container {
-			max-width: 800px;
+			max-width: 100px;
 			margin: 0 auto;
 			padding: 20px;
-			background-color: rgba(255, 255, 255, 0.9);
+/* 			background-color: rgba(255, 255, 255, 0.9); */
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			margin-top: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		.contact-container {
+			max-width: 100%;
+			margin: 0 auto;
+			padding: 20px;
+/* 			background-color: rgba(255, 255, 255, 0.9); */
 			border-radius: 10px;
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 			margin-top: 100px;
@@ -79,8 +92,8 @@
 	<div class="container">
 		
 	</div>
-	<div class="container">
-		<a href="contact.vcf" class="button" download>Download Contact Information</a>
+	<div class="contact-container">
+		<a href="contact.vcf" class="button" download>Save Contact Information</a>
 		<div class="social-icons">
 			<a href="https://www.facebook.com/kari.hutchison.148/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
 			<a href="https://www.instagram.com/skiwhirlsrusticcorner/" class="social-icon"><i class="fab fa-instagram"></i></a>
