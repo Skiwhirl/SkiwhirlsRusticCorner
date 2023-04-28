@@ -2,42 +2,58 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Contact Profile</title>
+	<title>Furniture Artist Business</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
 		body {
 			font-family: Arial, sans-serif;
 			margin: 0;
 			padding: 0;
-			background-color: #f2f2f2;
+			background-image: url('background.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
 		}
-		.container {
-			max-width: 500px;
-			margin: 0 auto;
-			padding: 20px;
-			background-color: #ffffff;
-			border-radius: 10px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-		}
-		.profile {
+		.header {
+			background-image: url('header.jpg');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			height: 80px;
 			display: flex;
 			align-items: center;
-			margin-bottom: 20px;
+			padding: 0 20px;
 		}
-		.profile img {
-			width: 80px;
-			height: 80px;
-			border-radius: 50%;
-			margin-right: 20px;
-		}
-		.profile h1 {
+		h1 {
+			font-size: 48px;
 			margin: 0;
+			color: #ffffff;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+			text-align: center;
+		}
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: rgba(255, 255, 255, 0.9);
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			margin-top: 100px;
+		}
+		label {
 			font-size: 24px;
+			font-weight: bold;
+			display: block;
+			margin-top: 20px;
 		}
-		.profile p {
-			margin: 0;
+		input[type="text"] {
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #cccccc;
 			font-size: 18px;
-			color: #999999;
+			margin-top: 10px;
 		}
 		.button {
 			display: block;
@@ -50,36 +66,22 @@
 			border-radius: 5px;
 			margin-top: 20px;
 		}
-		.social-icons {
-			display: flex;
-			justify-content: center;
-			margin-top: 20px;
-		}
-		.social-icons a {
-			display: inline-block;
-			margin: 0 10px;
-		}
-		.social-icons img {
-			width: 40px;
-			height: 40px;
-		}
 	</style>
 </head>
 <body>
+	<div class="header">
+		<h1>Furniture Artist Business</h1>
+	</div>
 	<div class="container">
-		<div class="profile">
-			<img src="images/CompanyLogo.jpg" alt="Profile Picture">
-			<div>
-				<h1>Kari Hutchison</h1>
-				<p>Owner</p>
-			</div>
-		</div>
-		<p><strong>Phone:</strong>#<br><strong>Email:</strong> skiwhirlsrusticcorner@gmail.com<br><strong>Address:</strong> 558 Perry Highway, Pgh, PA 15229</p>
-		<a href="tel:#" class="button">Call Now</a>
-		<div class="social-icons">
-			<a href="https://www.facebook.com/" target="_blank"><img src="https://www.facebook.com/kari.hutchison.148/" alt="Facebook"></a>
-			<a href="https://www.instagram.com/" target="_blank"><img src="https://www.instagram.com/skiwhirlsrusticcorner/?hl=en" alt="Instagram"></a>
-		</div>
+		<form>
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required>
+			<label for="address">Address:</label>
+			<input type="text" id="address" name="address" required>
+			<label for="phone">Phone:</label>
+			<input type="text" id="phone" name="phone" required>
+			<a href="#" class="button">Save Contact</a>
+		</form>
 	</div>
 </body>
 </html>
