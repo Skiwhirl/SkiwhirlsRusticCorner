@@ -142,26 +142,68 @@
 			color: #BA4A00;
 			font-size: 24px;
 		}
-    .about-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+	    .about-container {
+	      display: flex;
+	      flex-wrap: wrap;
+	      justify-content: center;
+	    }
 
-    .box {
-      width: calc(33.33% - 5px); /* 4 blocks + 1 block in between = 5 blocks */
-      height: 100px;
-      background-color: #ccc;
-      margin-right: 5px;
-    }
+	    .box {
+	      width: calc(33.33% - 5px); /* 4 blocks + 1 block in between = 5 blocks */
+	      height: 100px;
+	      background-color: #ccc;
+	      margin-right: 5px;
+	    }
 
-    .spacer {
-      width: 1px;
-      height: 100px;
-      margin-right: 5px;
-    }
+	    .spacer {
+	      width: 1px;
+	      height: 100px;
+	      margin-right: 5px;
+	    }
 
+    		.carousel-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 500px;
+			overflow: hidden;
+		}
+		.carousel-slide {
+			display: flex;
+			flex-direction: row;
+			height: 100%;
+			animation: slide 5s infinite;
+		}
+		.carousel-image {
+			flex: 1;
+			height: 100%;
+			object-fit: cover;
+		}
+		@keyframes slide {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(-100%);
+			}
+		}
 	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+		    var folder = "products/"; // path to your products directory
+		    var fileExtension = ".jpg"; // replace .jpg with the file type you want to display
+		    $.ajax({
+			url: folder,
+			success: function(data) {
+			    $(data).find("a:contains(" + fileExtension + ")").each(function() {
+				var filename = this.href.replace(window.location.host, "").replace("http://", "").replace("https://", "");
+				$(".carousel-slide").append("<img class='carousel-image' src='" + filename + "' alt='Image'>");
+			    });
+			}
+		    });
+		});
+	</script>
 </head>
 <body>
 	<div class="container">
@@ -186,6 +228,10 @@
 	      We currently have items on display at <a href="https://www.thecherishedboutique.com/" class="nav-link bolded">Cherished Boutique</a> located at:
               558 Perry Hwy, Pittsburgh, PA 15229  </strong></p>
 	  </div>
+	<div class="carousel-container">
+		<div class="carousel-slide">
+		</div>
+	</div>
 
 	<div class="contact-container">
 
